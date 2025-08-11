@@ -1,0 +1,145 @@
+.note-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  padding: 20px 10px; /* padding for small screen */
+  box-sizing: border-box;
+  overflow-y: auto; /* allow full page scroll */
+  z-index: 100;
+  animation: fadeIn 0.25s ease;
+}
+
+.note-modal-content {
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  padding: 20px;
+  border-radius: 12px;
+  width: 500px;
+  max-width: 100%;
+  /* Remove height or max-height */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /* Remove internal scroll */
+  overflow: visible;
+}
+
+.note-modal-content input {
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border: 3px solid var(--theme-secondary);
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  font-size: 1rem;
+  transition: border-color 0.2s ease, background-color 0.3s ease;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.note-modal-content textarea {
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  min-height: 120px;
+  height: 80%;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--theme-bg);
+  color: var(--theme-text);
+  font-size: 1rem;
+  transition: border-color 0.2s ease, background-color 0.3s ease;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.note-modal-content input:focus,
+.note-modal-content textarea:focus {
+  border-color: var(--theme-primary);
+  outline: none;
+  border-radius: 8px;
+  background-color: var(--theme-primary);
+  color: #fff;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  flex: 1 1 auto;
+  min-width: 100px;
+  text-align: center;
+}
+
+.modal-actions button:first-child {
+  background-color: var(--theme-primary);
+  color: white;
+}
+
+.modal-actions .delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+  box-shadow: 0 3px 10px rgba(255, 77, 77, 0.5);
+}
+
+.modal-actions button:last-child {
+  background-color: var(--theme-secondary);
+  color: var(--theme-text-second);
+}
+
+.modal-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.modal-actions button:active {
+  transform: scale(0.95);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .note-modal-content {
+    width: 100%;
+    border-radius: 12px;
+    padding: 15px;
+  }
+
+  .modal-actions {
+    justify-content: center;
+  }
+
+  .modal-actions button {
+    flex: 1 1 45%;
+    min-width: auto;
+    margin-bottom: 8px;
+  }
+}

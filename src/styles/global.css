@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  transition: background 0.3s;
+}
+body.light {
+  background: #fff4f4;
+  color: #333;
+}
+body.dark {
+  background: #222;
+  color: #f8f8f8;
+}
+body.cute {
+  background: #ffefff;
+  color: #ff69b4;
+}

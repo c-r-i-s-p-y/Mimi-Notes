@@ -1,0 +1,9 @@
+body {
+  background-color: var(--theme-bg);
+  background-image: repeating-linear-gradient(
+    45deg,
+    color-mix(in srgb, var(--theme-primary) 20%, transparent) 0 20px,
+    color-mix(in srgb, var(--theme-secondary) 15%, transparent) 20px 40px
+  );
+  background-attachment: fixed;
+}

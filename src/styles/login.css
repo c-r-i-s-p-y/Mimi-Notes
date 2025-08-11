@@ -1,0 +1,119 @@
+:root {
+  --primary-color: var(--theme-primary, #6A0DAD);
+  --secondary-color: var(--theme-secondary, #FFC107);
+  --bg-color: var(--theme-bg, #ffffff);
+  --text-color: var(--theme-text, #000000);
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 10px; /* Add padding so content doesn’t touch edges on small screens */
+}
+
+.login-card {
+  background: var(--bg-color);
+  padding: 2rem 2rem 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  max-width: 350px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-3px);
+}
+
+.login-title {
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.login-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs */
+.login-input {
+  width: 90%;
+  padding: 0.8rem;
+  border: none;
+  border-bottom: 2px solid var(--primary-color);
+  margin-bottom: 1.2rem;
+  outline: none;
+  font-size: 1rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-input:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 6px var(--secondary-color);
+}
+
+/* Button */
+.login-button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  width: 90%;
+  max-width: 320px;
+  border-radius: 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  margin: 0 auto; /* center */
+  display: block;
+}
+
+.login-button:hover {
+  background: var(--secondary-color);
+  color: black;
+}
+
+.login-button:active {
+  transform: scale(0.98);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 1.5rem 1.5rem 2.5rem;
+    max-width: 100%;
+  }
+
+  .login-title {
+    font-size: 1.6rem;
+  }
+
+  .login-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .login-input {
+    width: 90%;
+    font-size: 0.95rem;
+  }
+
+  .login-button {
+    width: 100%;
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+}

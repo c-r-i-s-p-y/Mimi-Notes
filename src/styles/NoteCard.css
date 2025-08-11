@@ -1,0 +1,62 @@
+.note-card {
+  background-color: var(--theme-secondary);
+  color: var(--theme-text);
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 160px;
+  height: 160px; /* fixed height for all cards */
+  width: 160px;
+  overflow: hidden; /* clip content overflow */
+}
+
+.note-card:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.18);
+}
+
+.note-content {
+  flex: 1;
+  font-size: 14px;
+  color: #000;
+  white-space: pre-wrap;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  word-break: break-word;
+  
+  overflow-y: auto; /* enable vertical scroll if text too long */
+  max-height: 100%; /* limit height inside the card */
+}
+
+/* Scrollbar styling (optional) */
+.note-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.note-content::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+.note-name {
+  font-weight: bold;
+  font-size: 12px;
+  color: #000;
+  opacity: 0.8;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Touch feedback for mobile */
+@media (hover: none) {
+  .note-card:active {
+    transform: scale(0.98);
+  }
+}

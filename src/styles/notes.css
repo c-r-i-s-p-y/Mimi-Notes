@@ -1,0 +1,19 @@
+.notes-container {
+  padding: 2rem;
+}
+.notes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.actions select,
+.actions button {
+  margin-left: 10px;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+}
+.quote {
+  margin: 1rem 0;
+  font-style: italic;
+}
